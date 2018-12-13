@@ -1,0 +1,176 @@
+{
+  "settings": {
+    "name": "Site-12-13_1037",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "storem4",
+      "title": "StoreM4",
+      "styling": {
+        "primaryColor": "#a38dfd",
+        "secondaryColor": "#FE525B",
+        "successColor": "#b2ccd2",
+        "infoColor": "#1BA1E2",
+        "warningColor": "#82786E",
+        "dangerColor": "#879A9F",
+        "mainFont": "Poppins",
+        "display1Font": "Poppins",
+        "display1Size": 4.5,
+        "display2Font": "Poppins",
+        "display2Size": 3,
+        "display5Font": "Comfortaa",
+        "display5Size": 1.5,
+        "display7Font": "Comfortaa",
+        "display7Size": ".9",
+        "display4Font": "Poppins",
+        "display4Size": 1,
+        "isRoundedButtons": true,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      },
+      "additionalSetColors": [
+        "#ff0000"
+      ]
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "4.8.1",
+    "siteFonts": [],
+    "uniqCompNum": 3,
+    "versionPublish": "4.8.1",
+    "screenshot": "screenshot.png"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Home",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background": "@bg-value",
+              "& when (@gradientBg)": {
+                "background": "linear-gradient(90deg, @bg-value, @color2)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".container-fluid": {
+              "padding": "0 3rem"
+            },
+            ".table-wrap": {
+              "overflow": "hidden",
+              "border-radius": "3%",
+              "background-color": "@cardColor",
+              "transition": "0.3s ease-out all",
+              "padding": "0",
+              "margin-bottom": "1em",
+              ".table-pricing": {
+                "margin": "0 0 0.4em 0"
+              },
+              "ul": {
+                "word-wrap": "break-word",
+                "padding": "0 4rem",
+                "margin": "0 0 2rem 0",
+                "list-style": "none",
+                "& when (@showButtons)": {
+                  "margin": "0"
+                },
+                "li": {
+                  "display": "flex",
+                  "-webkit-flex-direction": "row",
+                  "flex-direction": "row",
+                  "padding": "0.7em 0",
+                  "-webkit-align-items": "flex-end",
+                  "align-items": "flex-end",
+                  "span": {
+                    "font-size": "32px",
+                    "color": "rgb(0, 0, 0)"
+                  }
+                }
+              },
+              "ul:last-child": {
+                "padding-bottom": "2rem"
+              },
+              "&:hover": {
+                "box-shadow": "0 7px 24px 0 rgba(110, 123, 157, 0.42)"
+              },
+              "&:hover .table-heading": {
+                "background-color": "@tHeadingHover"
+              }
+            },
+            ".mbr-iconfont": {
+              "margin": "0 0.5em"
+            },
+            ".table-heading": {
+              "transition": "0.3s ease-out all",
+              "display": "block",
+              "width": "100%",
+              "padding": "0.6em 4rem",
+              "background-color": "@headingBg",
+              "color": "#ffffff",
+              "text-align": "center"
+            },
+            ".table-purchase": {
+              "padding": "0 4rem",
+              "margin": "2.5em 0 0 0",
+              ".pricing-value": {
+                "vertical-align": "top",
+                "display": "inline-block"
+              },
+              ".table-pricing": {
+                "display": "inline-block"
+              }
+            },
+            ".table-pricing,.pricing-value h1": {
+              "text-align": "left"
+            },
+            ".table-pricing": {
+              "text-align": "center"
+            },
+            "@media (max-width: 767px)": {
+              ".container-fluid": {
+                "padding": "0 1rem"
+              }
+            },
+            "@media (max-width: 992px)": {
+              "padding-left": "0rem !important",
+              "padding-right": "0rem !important"
+            },
+            "@media (max-width: 1393px)": {
+              "ul": {
+                "padding": "1rem !important"
+              },
+              ".table-purchase": {
+                "padding": "1rem !important"
+              },
+              ".table-heading": {
+                "padding": "1rem !important"
+              }
+            },
+            "UL": {
+              "text-align": "left"
+            }
+          },
+          "_name": "pricing-tables3",
+          "_customHTML": "<section group=\"Pricing Tables\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input inline type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input inline type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked>\n        <input type=\"color\" title=\"Card Color\" name=\"cardColor\" value=\"#efefef\">\n        <input type=\"color\" title=\"Card Heading Color\" name=\"headingBg\" value=\"#000000\">\n        <input type=\"color\" title=\"Card Heading Hover\" name=\"tHeadingHover\" value=\"#ff0000\">\n\n        <select title=\"Items Count\" name=\"itemsCount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\" selected>3</option>\n            <option value=\"4\">4</option>\n        </select>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background3.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#7ccbf1\" condition=\"bg.type=='color' && gradientBg\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container-fluid\">\n        <div class=\"row text-center justify-content-center\">\n            <div class=\"col-xl-3 col-lg-6 col-md-6 col-10\" mbr-if=\"itemsCount > 0\" mbr-class=\"{'col-lg-3': itemsCount == 2,\n                             'col-lg-3': itemsCount == 1}\">\n                <div class=\"table-wrap\">\n                    <span mbr-text class=\"table-heading mbr-fonts-style\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-5\">\n                          SILVER</span>\n                    <div class=\"table-purchase\">\n                        <span mbr-text class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\">\n                              $\n                        </span>\n                        <h1 class=\"table-pricing mbr-fonts-style\" data-app-selector=\".table-pricing, .pricing-value\" mbr-theme-style=\"display-2\">\n                            19.99</h1>\n                    </div>\n                    <ul mbr-text class=\"list-group mbr-black mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                        <li>\n                            <span class=\"mbri-laptop mbr-iconfont\"></span>\n                            1 Webinar Per Month + Recording</li>\n                        <li>\n                            <span class=\"imind-gun mbr-iconfont\"></span>\n                            25% Off Quartley &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Live-Fire Training</li>\n                        <li>\n                            <span class=\"mbri-drag-n-drop2 mbr-iconfont\"></span>FREE 6 Month Membership to &nbsp;GetFirearmTraining.com<br></li>\n                        <li>\n                            <span class=\"li_t-shirt mbr-iconfont\"></span>\n                            Concealed Coalition Silver Member Shirt</li>\n                        <li>\n                            <span class=\"imind-pen mbr-iconfont\"></span>\n                            Tactical Pen</li>\n                        <li>\n                            <span class=\"icon54-v1-bowler-hat mbr-iconfont\"></span>Concealed Coalition Hat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>                       \n                    </ul>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pb-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                        <a href=\"https://mobirise.com\" class=\"btn btn-primary btn-bgr\">BUY NOW</a>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-xl-3 col-lg-6 col-md-6 col-10\" mbr-if=\"itemsCount > 1\" mbr-class=\"{'col-lg-3': itemsCount == 2,\n                             'col-lg-3': itemsCount == 1}\">\n                <div class=\"table-wrap\">\n                    <span mbr-text class=\"table-heading mbr-fonts-style\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-5\">\n                          GOLD</span>\n                    <div class=\"table-purchase\">\n                        <span mbr-text class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\">\n                              $\n                        </span>\n                        <h1 class=\"table-pricing mbr-fonts-style\" data-app-selector=\".table-pricing, .pricing-value\" mbr-theme-style=\"display-2\">\n                            39.99</h1>\n                    </div>\n                    <ul mbr-text class=\"list-group mbr-black mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                        <li>\n                            <span class=\"mbri-users mbr-iconfont\"></span>2 Webinar Per Month + Recording<br></li>\n                        <li>\n                            <span class=\"mbri-users mbr-iconfont\"></span>One on One Support During Webinar<br></li><li><span class=\"mbri-users mbr-iconfont\"><br></span>50% Off Quartley                   Live-Fire Training<br></li>\n                        <li>\n                            <span class=\"mbri-to-local-drive mbr-iconfont\"></span>1 Year FREE Membership to GetFirearmTraining.com<br></li>\n                        <li>\n                            <span class=\"mbri-extension mbr-iconfont\"></span>Concealed Coalition Gold Member Shirt<br></li>\n                        <li>\n                            <span class=\"mbri-database mbr-iconfont\"></span>Tactical Jag Box<br></li>\n                        <li>\n                            <span class=\"mbri-letter mbr-iconfont\"></span>Concealed Coalitoin Hat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</li>\n                    </ul>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pb-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                        <a href=\"https://mobirise.com\" class=\"btn btn-primary btn-bgr\">BUY NOW</a>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-xl-3 col-lg-6 col-md-6 col-10\" mbr-if=\"itemsCount > 2\" mbr-class=\"{'col-lg-3': itemsCount == 2,\n                             'col-lg-3': itemsCount == 1}\">\n                <div class=\"table-wrap\">\n                    <span mbr-text class=\"table-heading mbr-fonts-style\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-5\">\n                          PLATINUM</span>\n                    <div class=\"table-purchase\">\n                        <span mbr-text class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\">\n                              $\n                        </span>\n                        <h1 class=\"table-pricing mbr-fonts-style\" data-app-selector=\".table-pricing, .pricing-value\" mbr-theme-style=\"display-2\">59.99</h1>\n                    </div>\n                    <ul mbr-text class=\"list-group mbr-black mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                        <li>\n                            <span class=\"mbri-users mbr-iconfont\"></span>2 Webinar Per Month + Recording<br></li>\n                        <li>\n                            <span class=\"mbri-users mbr-iconfont\"></span>One on One Support During Webinar &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</li>\n                        <li>\n                            <span class=\"mbri-users mbr-iconfont\"></span>FREE Quarterly Live-Fire Training<br></li>\n                        <li>\n                            <span class=\"mbri-to-local-drive mbr-iconfont\"></span>FREE Lifetime membership to GetFirearmTraining.com&nbsp;</li>\n                        <li>\n                            <span class=\"mbri-extension mbr-iconfont\"></span>\n                            Concealed Coalition Concealed Carry Jacket</li>\n                        <li>\n                            <span class=\"mbri-database mbr-iconfont\"></span>\n                            Concealed Carry Platinum Member Shirt</li>\n                        <li>\n                            <span class=\"mbri-letter mbr-iconfont\"></span>\n                            Tactical Jag Box</li>\n                        <li>\n                            <span class=\"mbri-letter mbr-iconfont\"></span>Concealed Coalition Hat<br></li><li><span class=\"mbri-letter mbr-iconfont\"></span>Firearm of your choice</li>\n                    </ul>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pb-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                        <a href=\"https://mobirise.com\" class=\"btn btn-primary btn-bgr\">BUY NOW</a>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col-xl-3 col-lg-6 col-md-6 col-10\" mbr-if=\"itemsCount > 3\" mbr-class=\"{'col-lg-3': itemsCount == 2,\n                             'col-lg-3': itemsCount == 1}\">\n                <div class=\"table-wrap\">\n                    <span mbr-text class=\"table-heading mbr-fonts-style\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-5\">\n                          BASIC\n                    </span>\n                    <div class=\"table-purchase\">\n                        <span mbr-text class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\">\n                              $\n                        </span>\n                        <h1 class=\"table-pricing mbr-fonts-style\" data-app-selector=\".table-pricing, .pricing-value\" mbr-theme-style=\"display-2\">\n                            21.00\n                        </h1>\n                    </div>\n                    <ul mbr-text class=\"list-group mbr-black mbr-fonts-style\" mbr-theme-style=\"display-7\">\n                        <li>\n                            <span class=\"mbri-users mbr-iconfont\"></span>\n                            1 User\n                        </li>\n                        <li>\n                            <span class=\"mbri-users mbr-iconfont\"></span>\n                            1 User\n                       </li>\n                        <li>\n                            <span class=\"mbri-users mbr-iconfont\"></span>\n                            1 User\n                       </li>\n                        <li>\n                            <span class=\"mbri-to-local-drive mbr-iconfont\"></span>\n                            10 GB of Disk Space\n                        </li>\n                        <li>\n                            <span class=\"mbri-extension mbr-iconfont\"></span>\n                            500 GB Bandwitch\n                        </li>\n                        <li>\n                            <span class=\"mbri-database mbr-iconfont\"></span>\n                            1 Database\n                        </li>\n                        <li>\n                            <span class=\"mbri-letter mbr-iconfont\"></span>\n                            2 Email Accounts\n                        </li>\n                    </ul>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center pb-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                        <a href=\"https://mobirise.com\" class=\"btn btn-primary btn-bgr\">BUY NOW</a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "rc7PmCDr2x",
+          "_anchor": "pricing-tables3-2",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": [],
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
